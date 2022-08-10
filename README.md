@@ -19,23 +19,21 @@ git clone https://github.com/nonsoo24/bitcasino-app.git
 yarn install
 ```
 
-### `yarn start`
+- Run the command below to run the project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```yarn
+yarn start
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Run the command below to build the project
 
-### `yarn build`
+```yarn
+yarn build
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Preview
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Alt text](./src/assets/png//preview.png?raw=true "Bitcasino App")
 
 ## Tools Used
 
