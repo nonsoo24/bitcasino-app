@@ -5,8 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import ErrorBoundary from 'components/ErrorBoundary';
+import FullScreenSpinner from 'components/FullScreenSpinner';
 
-const isLoading = () => <p className="loading-text">Loading...</p>;
+const isLoading = () => <FullScreenSpinner isLoading />;
 
 const client = new ApolloClient({
 	uri: "https://api.blocktap.io/graphql",
