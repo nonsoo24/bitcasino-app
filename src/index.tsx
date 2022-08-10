@@ -1,15 +1,30 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import ErrorBoundary from 'components/ErrorBoundary';
+
+const isLoading = () => <p className="loading-text">Loading...</p>;
+
+const client = new ApolloClient({
+	uri: "https://api.blocktap.io/graphql",
+	cache: new InMemoryCache(),
+});
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <ErrorBoundary>
+      <Suspense fallback={isLoading()}>
+          <ApolloProvider client={client}>
+            <App />
+          </ApolloProvider>
+        </Suspense>
+    </ErrorBoundary>
   </React.StrictMode>
 );
 
